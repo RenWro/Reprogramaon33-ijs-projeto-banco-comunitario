@@ -1,6 +1,7 @@
 import { Cliente } from './cliente';
+import { GerenteInterface } from '../interfaces/gerenteInterface';
 
-export class Gerente {
+export class Gerente implements GerenteInterface {
   constructor(
     public nomeCompleto: string,
     public id: string,
