@@ -1,6 +1,7 @@
+import { ContaInterface } from '../interfaces/contaInterface';
 import { Cliente } from './cliente';
 
-export abstract class ContaBancaria {
+export abstract class ContaBancaria implements ContaInterface {
   constructor(
     public numero: number,
     public saldo: number,
