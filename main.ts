@@ -1,28 +1,24 @@
 import { Cliente } from './models/cliente';
-import { Banco } from './services/banco';
+import { Gerente } from './models/gerente';
+import { ContaCorrente } from './models/contaCorrente';
+import { ContaPoupanca } from './models/contaPoupanca';
+import { ClienteService } from './services/clienteService';
+import { GerenteService } from './services/gerenteService';
 
-const banco = new Banco();
+const clienteService = new ClienteService();
+const gerenteService = new GerenteService();
 
-const cliente1 = new Cliente('João Silva', 1, 'Rua A, 123', '9999-8888', 1000);
-const cliente2 = new Cliente('Maria Oliveira', 2, 'Rua B, 456', '8888-7777', 300);
+const gerente = new Gerente('Maria Gerente', '1');
+gerenteService.adicionarGerente(gerente);
 
-banco.adicionarCliente(cliente1);
-banco.adicionarCliente(cliente2);
+const cliente = new Cliente('João Cliente', '1', 'Rua A, 123', '9999-8888', 1000);
+clienteService.adicionarCliente(cliente);
 
-const contaCorrente1 = banco.criarContaCorrente(cliente1);
-if (contaCorrente1) {
-    contaCorrente1.depositar(500);
-    contaCorrente1.sacar(200);
-    console.log(`Conta Corrente de ${cliente1.nomeCompleto} - Saldo: ${contaCorrente1.saldo}`);
-}
+const contaCorrente = new ContaCorrente(1, 0, cliente);
+const contaPoupanca = new ContaPoupanca(2, 0, cliente);
 
-const contaPoupanca1 = banco.criarContaPoupanca(cliente2);
-contaPoupanca1.depositar(200);
-contaPoupanca1.sacar(50);
-console.log(`Conta Poupança de ${cliente2.nomeCompleto} - Saldo: ${contaPoupanca1.saldo}`);
+gerente.abrirConta(cliente, contaCorrente);
+gerente.abrirConta(cliente, contaPoupanca);
 
-if (contaCorrente1) {
-    contaCorrente1.transferir(100, contaPoupanca1);
-    console.log(`Transferência realizada. Novo saldo da Conta Corrente: ${contaCorrente1.saldo}`);
-    console.log(`Novo saldo da Conta Poupança: ${contaPoupanca1.saldo}`);
-}
+console.log('Clientes:', clienteService.obterCliente('1'));
+console.log('Gerentes:', gerenteService.obterGerente('1'));
