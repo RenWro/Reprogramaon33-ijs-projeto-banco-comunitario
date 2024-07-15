@@ -10,18 +10,23 @@ Disponibilizando nossa API
 Seu desafio é criar uma API RESTful para o sistema bancário desenvolvido na semana 2, agora incluindo a funcionalidade de Gerente de Conta. O Gerente é responsável por gerenciar os clientes e suas contas, podendo abrir, fechar e modificar o tipo de conta.
 
 Abaixo estão os requisitos:
+<ul>
 Ao cliente do banco ser adicionadas as seguintes informações:
-Contas
-Gerente
+<li>Contas</li>
+<li>Gerente</li>
+  
 Gerente deve ter as seguintes informações:
-Nome completo
-Número de identificação (ID)
-Clientes
+<li>Nome completo</li>
+<li>Número de identificação (ID)</li>
+<li>Clientes</li>
+
 Requisitos de negócio:
-Criar classes para representar Cliente e Gerente, incluindo os atributos mencionados no diagrama.
-Implementar métodos nas classes Cliente e Gerente para abrir, fechar e modificar o tipo de conta.
-Atualizar a classe Conta para manter uma referência ao cliente associado a ela.
-Implementar métodos na classe Gerente para adicionar e remover clientes, bem como para abrir, fechar e modificar o tipo de conta para um determinado cliente.
-Organizar a estrutura do projeto de forma apropriada, seguindo as melhores práticas para uma API RESTful.
+<li>Criar classes para representar Cliente e Gerente, incluindo os atributos mencionados no diagrama.</li>
+<li>Implementar métodos nas classes Cliente e Gerente para abrir, fechar e modificar o tipo de conta.</li>
+<li>Atualizar a classe Conta para manter uma referência ao cliente associado a ela.</li>
+<li>Implementar métodos na classe Gerente para adicionar e remover clientes, bem como para abrir, fechar e modificar o tipo de conta para um determinado cliente.</li>
+<li>Organizar a estrutura do projeto de forma apropriada, seguindo as melhores práticas para uma API RESTful.</li>
+
+</ul>
 
 ![image](https://github.com/user-attachments/assets/27fab92a-1c25-4d2f-ad77-bf17ecb44d5c)
