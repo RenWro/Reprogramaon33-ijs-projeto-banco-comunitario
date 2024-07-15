@@ -1,7 +1,8 @@
 import { ContaBancaria } from './conta';
 import { Gerente } from './gerente';
+import { ClienteInterface } from '../interfaces/clienteInterface';
 
-export class Cliente {
+export class Cliente implements ClienteInterface {
   constructor(
     public nomeCompleto: string,
     public id: string,
